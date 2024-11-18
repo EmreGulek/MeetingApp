@@ -1,0 +1,30 @@
+@model UserInfo
+@{
+    ViewData["Title"] = "Başvuru Sayfası";
+}
+
+<h1 class="h4 text-center">Toplantı katılım formu</h1>
+<form method="post" action="/Meeting/Apply">
+    <div asp-validation-summary="All"></div>
+    <div class="div mb-3">
+        <label asp-for="Name" class="form-label">Ad Soyad : </label>
+        <input asp-for="Name" class="form-control" placeholder="Fatih Gülek">
+    </div>
+    <div class="div mb-3">
+        <label asp-for="Phone" class="form-label">Telefon Numarası : </label>
+        <input asp-for="Phone" class="form-control"  placeholder="555*******" >
+    </div>
+    <div class="div mb-3">
+        <label asp-for="Email" class="form-label">Email : </label>
+        <input asp-for="Email" class="form-control" placeholder="fatihgulek@gmail.com">
+    </div>
+    <div class="div mb-3">
+        <label asp-for="WillAttend" class="form-label">Katılım Durumu : </label>
+        <select asp-for="WillAttend" class="form-select">
+            <option value="true">Evet , Geliyorum</option>
+            <option value="false">Hayır , Gelemiyorum</option>
+
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Kaydet</button>
+</form>
